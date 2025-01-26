@@ -1,0 +1,43 @@
+.countdown {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.timerItem {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  min-width: 80px;
+  text-align: center;
+}
+
+.number {
+  font-family: var(--font-quicksand);
+  font-weight: 700;
+  font-size: 2rem;
+  color: black;
+  line-height: 1;
+}
+
+.label {
+  font-family: var(--font-quicksand);
+  font-size: 0.875rem;
+  color: black;
+  margin-top: 0.5rem;
+}
+
+.expiredMessage {
+  background: #1a5632;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: left;
+}
+
+.urgentMessage {
+  background: #b45309;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+

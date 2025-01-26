@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import styles from "./header.module.css";
 import Image from "next/image";

@@ -8,14 +8,14 @@
   background: white;
   padding: 1rem;
   border-radius: 0.5rem;
-  min-width: 80px;
+  min-width: 70px;
   text-align: center;
 }
 
 .number {
   font-family: var(--font-quicksand);
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: black;
   line-height: 1;
 }
@@ -41,3 +41,35 @@
   text-align: center;
 }
 
+
+/* Tablet */
+@media (max-width: 768px) {
+  .countdown {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .countdown {
+    justify-content: center;
+    margin-left: 0;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .timerItem {
+    min-width: 65px;
+    padding: 0.75rem;
+    flex: 1 0 20%;
+  }
+
+  .number {
+    font-size: 1.6rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+}

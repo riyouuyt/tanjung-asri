@@ -1,13 +1,14 @@
 "use client";
 import CountdownTimer from "@/components/countdown/Countdown";
 import styles from "./hero.module.css";
+import heroBackground from "../../../public/assets/hero.png"; // Import gambar
 
 export default function Hero() {
   return (
     <section 
       className={styles.hero}
       style={{
-        backgroundImage: "url('/assets/hero.png')",
+        backgroundImage: `url(${heroBackground.src})`, // Gunakan gambar yang diimpor
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}

@@ -8,17 +8,17 @@
 }
 
 .container {
-  max-width: 1450px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 2rem;
-  width: 90%;
+  width: 100%;
 }
 
 .welcomeText {
   font-family: var(--font-fredoka);
   color: white;
   font-weight: 600;
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: left;
   margin-bottom: 1rem;
   line-height: 1.1;
@@ -28,7 +28,7 @@
   font-family: var(--font-fredoka);
   color: white;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 3.5rem;
   line-height: 1.2;
   margin-bottom: 2rem;
   text-align: left;

@@ -18,7 +18,7 @@ export default function CountdownTimer() {
       const now = new Date().getTime();
       const difference = targetDate - now;
       const twelveHours = 12 * 60 * 60 * 1000;
-
+  
       if (difference < 0) {
         setTimeLeft(prev => ({ ...prev, hasExpired: true }));
         clearInterval(timer);
@@ -42,9 +42,9 @@ export default function CountdownTimer() {
         });
       }
     }, 1000);
-
+  
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate])
 
   if (timeLeft.hasExpired) {
     return (

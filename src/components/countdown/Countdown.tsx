@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import styles from './countdown.module.css'
 
 export default function CountdownTimer() {
-  const targetDate = new Date("2025-01-31T00:00:00").getTime();
+  const targetDate = new Date("2025-02-28T00:00:00").getTime();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -50,7 +50,7 @@ export default function CountdownTimer() {
     return (
       <div className={styles.expiredMessage}>
         <p className={styles.messageText}>
-          🎉 Kegiatan telah berakhir!<br/>
+          🎉 Hitung Mundur telah berakhir!<br/>
           Tetap semangat menjaga lingkungan!<br/>
           Silahkan bawa sampah Anda ke pos bank sampah terdekat.
         </p>
@@ -66,9 +66,6 @@ export default function CountdownTimer() {
           Atas partisipasi dalam program hari ini<br/>
           Mari terus jaga kebersihan lingkungan!
         </p>
-        <div className={styles.urgentTime}>
-          Kegiatan akan segera ditutup dalam: {timeLeft.hours} Jam {timeLeft.minutes} Menit
-        </div>
       </div>
     );
   }

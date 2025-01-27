@@ -2,6 +2,7 @@
 import Header from "@/components/layout/Header/header";
 import Footer from "@/components/layout/Footer/footer";
 import Hero from "@/home/hero/hero";
+import Achievements from "@/home/achievement/achievements";
 
 export default function Home() {
   return (
@@ -12,6 +13,11 @@ export default function Home() {
         {/* Section Beranda */}
         <section id="beranda">
           <Hero />
+        </section>
+
+        {/* Section statistik - Placeholder */}
+        <section id="Pencapaian" className=" bg-white">
+            <Achievements />
         </section>
 
         {/* Section Harga - Placeholder */}

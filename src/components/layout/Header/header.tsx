@@ -1,13 +1,33 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import styles from "./header.module.css";
 import Image from "next/image";
-import Logo from "../../../../public/assets/tanjung-asri-logo.png"; 
+import Logo from "../../../../public/assets/tanjung-asri-logo.png";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get the hero section height (assuming it has an id of "beranda")
+      const heroSection = document.querySelector("#beranda");
+      const heroHeight = heroSection?.getBoundingClientRect().height || 0;
+      
+      // Check if we've scrolled past the hero section
+      if (window.scrollY > heroHeight - 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const navItems = [
     { name: "Beranda", href: "#beranda" },
     { name: "Harga", href: "#harga" },
@@ -25,7 +45,7 @@ export default function Header() {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}>
       <nav className={styles.navContainer}>
         {/* Logo */}
         <Image 
@@ -45,7 +65,7 @@ export default function Header() {
                 e.preventDefault();
                 scrollToSection(item.href);
               }}
-              className={styles.navLink}
+              className={`${styles.navLink} ${isScrolled ? styles.navLinkScrolled : ""}`}
             >
               {item.name}
             </a>
@@ -55,7 +75,7 @@ export default function Header() {
         {/* Bergabung Button */}
         <Link
           href="/bergabung"
-          className={styles.joinButton}
+          className={`${styles.joinButton} ${isScrolled ? styles.joinButtonScrolled : ""}`}
         >
           Bergabung
           <ArrowTopRightOnSquareIcon className="w-4 h-4" />
@@ -73,7 +93,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className={styles.mobileMenu}>
+          <div className={`${styles.mobileMenu} ${isScrolled ? styles.mobileMenuScrolled : ""}`}>
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -83,7 +103,7 @@ export default function Header() {
                   scrollToSection(item.href);
                   setIsOpen(false);
                 }}
-                className={styles.navLink}
+                className={`${styles.navLink} ${isScrolled ? styles.navLinkScrolled : ""}`}
               >
                 {item.name}
               </a>

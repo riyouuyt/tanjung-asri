@@ -1,0 +1,51 @@
+/* components/Achievements.module.css */
+.achievements {
+  padding: 4rem 1rem;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2d3436;
+}
+
+.achievementGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.achievementItem {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.achievementItem:hover {
+  transform: translateY(-5px);
+}
+
+.achievementIcon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.counter {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0.5rem 0;
+}
+
+.achievementTitle {
+  font-size: 1.2rem;
+  color: #636e72;
+}

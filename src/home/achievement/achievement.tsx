@@ -1,8 +1,8 @@
-// components/Achievements.tsx
 "use client";
 
 import { useEffect, useRef } from "react";
 import styles from "./achievements.module.css";
+import { MoneyIcon, TrashIcon, PeopleIcon, BoxIcon } from "./Icons";
 
 const Achievements = () => {
   const counterRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -55,10 +55,10 @@ const Achievements = () => {
   };
 
   const achievements = [
-    { icon: "/icons/money.svg", target: 2400000, title: "pendapatan" },
-    { icon: "/icons/trash.svg", target: 1244, title: "KG" },
-    { icon: "/icons/people.svg", target: 51, title: "Nasabah" },
-    { icon: "/icons/box.svg", target: 48, title: "Jenis Barang Yang Diterima" },
+    { icon: <MoneyIcon className={styles.achievementIcon} />, target: 2400000, title: "pendapatan" },
+    { icon: <TrashIcon className={styles.achievementIcon} />, target: 1244, title: "KG" },
+    { icon: <PeopleIcon className={styles.achievementIcon} />, target: 51, title: "Nasabah" },
+    { icon: <BoxIcon className={styles.achievementIcon} />, target: 48, title: "Jenis Barang Yang Diterima" },
   ];
 
   return (
@@ -68,11 +68,7 @@ const Achievements = () => {
       <div className={styles.achievementGrid}>
         {achievements.map((achievement, index) => (
           <div key={index} className={styles.achievementItem}>
-            <img
-              src={achievement.icon}
-              alt={achievement.title}
-              className={styles.achievementIcon}
-            />
+            {achievement.icon}
             <div
               ref={(el) => {
                 counterRefs.current[index] = el;

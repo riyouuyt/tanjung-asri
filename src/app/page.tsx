@@ -1,24 +1,23 @@
-// src/app/page.tsx
 import Header from "@/components/layout/Header/header";
 import Footer from "@/components/layout/Footer/footer";
 import Hero from "@/home/hero/hero";
-import Achievements from "@/home/achievement/achievements";
+import Achievements from "@/home/achievement/achievement";
 
 export default function Home() {
   return (
     <>
       <Header />
-      
+
       <main className="relative">
         {/* Section Beranda */}
         <section id="beranda">
           <Hero />
         </section>
 
-        {/* Section statistik - Placeholder */}
-        <section id="Pencapaian" className=" bg-white">
-            <Achievements />
-        </section>
+        {/* Section Placeholder untuk scroll */}
+        <div id="pencapaian" style={{  backgroundColor: "#f0f0f0" }}>
+           <Achievements />
+        </div>
 
         {/* Section Harga - Placeholder */}
         <section id="harga" className="py-16 bg-white">
@@ -39,7 +38,6 @@ export default function Home() {
             {/* Tambahkan konten layanan di sini */}
           </div>
         </section>
-
       </main>
 
       <Footer />
